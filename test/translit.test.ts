@@ -69,7 +69,12 @@ test("заглавные и знаки: слово заглавными, циф�
 
 // свои алфавиты: примеры из поля "examples" файла данных
 for (const name of alphabetNames().filter((n) => !COURSE.includes(n))) {
-  const examples = loadAlphabet(name).examples;
+  let examples: Record<string, string> | undefined;
+  try {
+    examples = loadAlphabet(name).examples;
+  } catch {
+    continue; // сломанный файл ловит тест «файлы данных алфавитов» — со своей причиной
+  }
   if (examples === undefined) continue;
   test(`алфавит ${name}: примеры`, () => {
     for (const [text, latin] of Object.entries(examples)) assert.equal(translit(text, name), latin);
