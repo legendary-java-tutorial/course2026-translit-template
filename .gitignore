@@ -1,0 +1,14 @@
+# Пакеты: ставит npm install, в историю не идут
+node_modules/
+
+# Сборка: пакет (npm run build) и сайт (npm run build:site) — делаются из коммита
+dist/
+site/
+*.tgz
+
+# Журнал Claude Code учебного профиля — не в историю
+.javarush/
+
+# Служебные файлы систем
+.DS_Store
+Thumbs.db

@@ -1,0 +1,28 @@
+{
+  "name": "translit",
+  "version": "0.1.0",
+  "description": "Кириллица латиницей: библиотека, команда и сайт с алфавитами на выбор",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "translit": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=24.12"
+  },
+  "scripts": {
+    "start": "node src/cli.ts",
+    "test": "node --test test/translit.test.ts",
+    "build": "tsc && node tools/copy-data.mjs dist",
+    "build:site": "tsc -p tsconfig.site.json && node tools/copy-data.mjs site"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "6.0.2"
+  }
+}

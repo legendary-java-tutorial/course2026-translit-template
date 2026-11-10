@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>translit — кириллица латиницей</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 3rem auto; padding: 0 1rem; }
+    label { display: block; margin-top: 1rem; }
+    input, select { font-size: 1.2rem; width: 100%; box-sizing: border-box; padding: .4rem; }
+    #result { font-size: 1.6rem; margin-top: 1.5rem; min-height: 2rem; word-break: break-word; }
+    #status { color: #666; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>translit</h1>
+  <p>Кириллица латиницей — алфавитом на выбор.</p>
+  <label>Текст <input id="text" value="Привет, жёлтый щенок" autocomplete="off"></label>
+  <label>Алфавит <select id="alphabet"></select></label>
+  <div id="result" aria-live="polite"></div>
+  <p id="status"></p>
+  <script type="module" src="./site.js"></script>
+</body>
+</html>
